@@ -31,7 +31,7 @@ function MenuProductCard({ product }: { product: Product }) {
       transition={{ duration: 0.3 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/[0.08] bg-card transition-all duration-300 hover:border-primary/40"
+      className="group relative flex flex-col overflow-hidden rounded-xl border border-foreground/[0.08] bg-card transition-all duration-300 hover:border-primary/40"
       style={{
         boxShadow: hovered ? "0 0 30px 0 hsla(72, 100%, 50%, 0.08)" : "none",
       }}
@@ -53,7 +53,7 @@ function MenuProductCard({ product }: { product: Product }) {
           {product.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-primary px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase text-primary-foreground"
+              className="rounded-full bg-primary px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-primary-foreground"
             >
               {tag}
             </span>
@@ -62,24 +62,24 @@ function MenuProductCard({ product }: { product: Product }) {
       </Link>
 
       {/* Info */}
-      <div className="flex flex-1 flex-col justify-between gap-3 p-4">
+      <div className="flex flex-1 flex-col justify-between gap-2 p-3">
         <div>
           <Link href={`/product/${product.id}`}>
-            <h3 className="font-sans text-lg font-bold uppercase tracking-wide text-foreground transition-colors hover:text-primary">
+            <h3 className="font-sans text-sm font-bold uppercase tracking-wide text-foreground transition-colors hover:text-primary">
               {product.name}
             </h3>
           </Link>
-          <p className="mt-1 font-mono text-xs leading-relaxed text-muted-foreground line-clamp-2">
+          <p className="mt-1 font-mono text-[10px] leading-relaxed text-muted-foreground line-clamp-2">
             {product.description}
           </p>
         </div>
 
         <div className="flex items-end justify-between">
           <div className="flex flex-col">
-            <span className="font-mono text-[10px] text-muted-foreground">
+            <span className="font-mono text-[9px] text-muted-foreground">
               {product.volume}
             </span>
-            <span className="font-mono text-2xl font-bold text-foreground">
+            <span className="font-mono text-lg font-bold text-foreground">
               {product.price} {"\u20BD"}
             </span>
           </div>
@@ -88,19 +88,19 @@ function MenuProductCard({ product }: { product: Product }) {
             layout
             className="flex items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground transition-colors"
             animate={{
-              width: hovered ? 150 : 40,
-              height: 40,
+              width: hovered ? 130 : 32,
+              height: 32,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ${product.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
           >
-            <motion.div className="flex items-center gap-2 whitespace-nowrap px-3">
-              <Plus className="h-4 w-4 flex-shrink-0" />
+            <motion.div className="flex items-center gap-1.5 whitespace-nowrap px-2">
+              <Plus className="h-3.5 w-3.5 flex-shrink-0" />
               <motion.span
                 initial={false}
                 animate={{ opacity: hovered ? 1 : 0, width: hovered ? "auto" : 0 }}
                 transition={{ duration: 0.2 }}
-                className="overflow-hidden font-mono text-[11px] font-bold uppercase"
+                className="overflow-hidden font-mono text-[10px] font-bold uppercase"
               >
                 {"\u0412 \u041A\u041E\u0420\u0417\u0418\u041D\u0423"}
               </motion.span>
@@ -174,7 +174,7 @@ export function MenuCatalog() {
       <AnimatePresence mode="popLayout">
         <motion.div
           layout
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {visibleProducts.map((product) => (
             <MenuProductCard key={product.id} product={product} />
