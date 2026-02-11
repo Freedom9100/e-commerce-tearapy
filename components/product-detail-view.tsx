@@ -5,8 +5,7 @@ import { motion } from "framer-motion"
 import { ShoppingBag, Minus, Plus, ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { type Product, desserts } from "@/lib/data"
-import { getAssetPath } from "@/lib/utils"
+import { type Product } from "@/lib/data"
 
 const sizes = ["S / 350 \u043C\u043B", "M / 500 \u043C\u043B", "L / 700 \u043C\u043B"]
 const sugarLevels = ["0%", "30%", "50%", "70%", "100%"]
@@ -223,56 +222,6 @@ export function ProductDetailView({ product }: { product: Product }) {
             </button>
           </div>
         </motion.div>
-      </div>
-
-      {/* Pair it with - Upsell desserts */}
-      <div className="mt-20">
-        <div className="mb-8">
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-            {"\u041E\u0442\u043B\u0438\u0447\u043D\u043E \u0441\u043E\u0447\u0435\u0442\u0430\u0435\u0442\u0441\u044F \u0441"}
-          </p>
-          <h2 className="mt-2 font-sans text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
-            {"\u0414\u043E\u0431\u0430\u0432\u044C"}
-            <span className="text-muted-foreground"> {"\u0434\u0435\u0441\u0435\u0440\u0442"}</span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {desserts.map((dessert) => (
-            <motion.div
-              key={dessert.id}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="group flex items-center gap-4 overflow-hidden rounded-xl border border-foreground/[0.08] bg-card p-4 transition-all hover:border-primary/30"
-            >
-              <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-secondary">
-                <Image
-                  src={dessert.image || getAssetPath("/placeholder.svg")}
-                  alt={dessert.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  sizes="80px"
-                />
-              </div>
-              <div className="flex flex-1 flex-col gap-1">
-                <h4 className="font-sans text-sm font-bold uppercase tracking-wide text-foreground">
-                  {dessert.name}
-                </h4>
-                <span className="font-mono text-lg font-bold text-foreground">
-                  {dessert.price} {"\u20BD"}
-                </span>
-              </div>
-              <button
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/10 text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
-                aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ${dessert.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
-              >
-                <Plus className="h-3.5 w-3.5" />
-              </button>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   )

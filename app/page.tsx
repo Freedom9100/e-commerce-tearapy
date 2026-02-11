@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero"
 import { BentoGrid } from "@/components/bento-grid"
 import { ShopByMood } from "@/components/shop-by-mood"
 import { Catalog } from "@/components/catalog"
-import { PerfectMatch } from "@/components/perfect-match"
 import { Footer } from "@/components/footer"
 
 export default function Page() {
@@ -14,7 +13,6 @@ export default function Page() {
       <BentoGrid />
       <ShopByMood />
       <Catalog />
-      <PerfectMatch />
       <Footer />
     </main>
   )
