@@ -26,12 +26,15 @@ export interface Dessert {
   image: string
 }
 
+// Для GitHub Pages нужен basePath
+const basePath = process.env.NODE_ENV === 'production' ? '/e-commerce-tearapy' : ''
+
 export const products: Product[] = [
   {
     id: 1,
     name: "Матча Сёрдж",
     price: "350",
-    image: "/drinks/matcha-surge.jpg",
+    image: `${basePath}/drinks/matcha-surge.jpg`,
     tags: ["NEW", "VEGAN"],
     volume: "500 мл",
     category: "milk-tea",
@@ -48,7 +51,7 @@ export const products: Product[] = [
     id: 2,
     name: "Берри Флакс",
     price: "420",
-    image: "/drinks/berry-flux.jpg",
+    image: `${basePath}/drinks/berry-flux.jpg`,
     tags: ["BEST"],
     volume: "450 мл",
     category: "fruit-tea",
@@ -65,7 +68,7 @@ export const products: Product[] = [
     id: 3,
     name: "Цитрус Вольт",
     price: "290",
-    image: "/drinks/citrus-volt.jpg",
+    image: `${basePath}/drinks/citrus-volt.jpg`,
     tags: ["VEGAN"],
     volume: "500 мл",
     category: "fizzy",
@@ -82,7 +85,7 @@ export const products: Product[] = [
     id: 4,
     name: "Таро Дрим",
     price: "450",
-    image: "/drinks/taro-dream.jpg",
+    image: `${basePath}/drinks/taro-dream.jpg`,
     tags: ["NEW"],
     volume: "450 мл",
     category: "milk-tea",
@@ -99,7 +102,7 @@ export const products: Product[] = [
     id: 5,
     name: "Пич Сигнал",
     price: "320",
-    image: "/drinks/peach-signal.jpg",
+    image: `${basePath}/drinks/peach-signal.jpg`,
     tags: ["VEGAN"],
     volume: "500 мл",
     category: "fruit-tea",
@@ -116,7 +119,7 @@ export const products: Product[] = [
     id: 6,
     name: "Личи Бёрст",
     price: "380",
-    image: "/drinks/lychee-burst.jpg",
+    image: `${basePath}/drinks/lychee-burst.jpg`,
     tags: ["NEW"],
     volume: "450 мл",
     category: "fizzy",
@@ -133,7 +136,7 @@ export const products: Product[] = [
     id: 7,
     name: "Жасмин Хейз",
     price: "270",
-    image: "/drinks/jasmine-haze.jpg",
+    image: `${basePath}/drinks/jasmine-haze.jpg`,
     tags: ["VEGAN"],
     volume: "500 мл",
     category: "fruit-tea",
@@ -149,7 +152,7 @@ export const products: Product[] = [
     id: 8,
     name: "Манго Пульс",
     price: "390",
-    image: "/drinks/mango-pulse.jpg",
+    image: `${basePath}/drinks/mango-pulse.jpg`,
     tags: ["BEST", "VEGAN"],
     volume: "500 мл",
     category: "fruit-tea",
@@ -176,7 +179,7 @@ export const combos: Combo[] = [
     name: "Матча + Моти",
     items: ["Матча Сёрдж", "Матча Моти x2"],
     price: "550",
-    image: "/drinks/matcha-surge.jpg",
+    image: `${basePath}/drinks/matcha-surge.jpg`,
     tag: "СКИДКА 100 \u20BD",
   },
   {
@@ -184,7 +187,7 @@ export const combos: Combo[] = [
     name: "Берри + Вафля",
     items: ["Берри Флакс", "Эгг Вафля"],
     price: "650",
-    image: "/drinks/berry-flux.jpg",
+    image: `${basePath}/drinks/berry-flux.jpg`,
     tag: "ХИТ",
   },
   {
@@ -192,7 +195,7 @@ export const combos: Combo[] = [
     name: "Таро + Дораяки",
     items: ["Таро Дрим", "Дораяки x2"],
     price: "750",
-    image: "/drinks/taro-dream.jpg",
+    image: `${basePath}/drinks/taro-dream.jpg`,
     tag: "СКИДКА 140 \u20BD",
   },
   {
@@ -200,7 +203,7 @@ export const combos: Combo[] = [
     name: "Цитрус + Моти",
     items: ["Цитрус Вольт", "Матча Моти x3"],
     price: "890",
-    image: "/drinks/citrus-volt.jpg",
+    image: `${basePath}/drinks/citrus-volt.jpg`,
     tag: "ЛУЧШАЯ ЦЕНА",
   },
 ]
