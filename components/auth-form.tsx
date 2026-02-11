@@ -39,12 +39,12 @@ export function AuthForm({ mode }: AuthFormProps) {
               TEARAPY
             </Link>
             <h1 className="font-sans text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
-              {isLogin ? "Welcome Back" : "Join the Crew"}
+              {isLogin ? "\u0412\u0425\u041E\u0414" : "\u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042F"}
             </h1>
             <p className="mt-2 font-mono text-xs text-muted-foreground">
               {isLogin
-                ? "Enter your credentials to access your account"
-                : "Create an account to start ordering"}
+                ? "\u0412\u0432\u0435\u0434\u0438 \u0434\u0430\u043D\u043D\u044B\u0435 \u0434\u043B\u044F \u0434\u043E\u0441\u0442\u0443\u043F\u0430 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+                : "\u0421\u043E\u0437\u0434\u0430\u0439 \u0430\u043A\u043A\u0430\u0443\u043D\u0442 \u0438 \u043D\u0430\u0447\u043D\u0438 \u0437\u0430\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C"}
             </p>
           </div>
 
@@ -57,11 +57,11 @@ export function AuthForm({ mode }: AuthFormProps) {
             {!isLogin && (
               <div className="relative">
                 <label className="mb-2 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                  Full Name
+                  {"\u0418\u043C\u044F"}
                 </label>
                 <input
                   type="text"
-                  placeholder="Your name"
+                  placeholder={"\u0422\u0432\u043E\u0451 \u0438\u043C\u044F"}
                   onFocus={() => setFocused("name")}
                   onBlur={() => setFocused(null)}
                   className={`w-full border-b-2 bg-transparent px-0 py-3 font-mono text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/40 ${
@@ -76,7 +76,7 @@ export function AuthForm({ mode }: AuthFormProps) {
             {/* Email */}
             <div className="relative">
               <label className="mb-2 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                Email Address
+                E-mail
               </label>
               <input
                 type="email"
@@ -94,11 +94,11 @@ export function AuthForm({ mode }: AuthFormProps) {
             {/* Password */}
             <div className="relative">
               <label className="mb-2 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                Password
+                {"\u041F\u0430\u0440\u043E\u043B\u044C"}
               </label>
               <input
                 type="password"
-                placeholder="Enter your password"
+                placeholder={"\u0412\u0432\u0435\u0434\u0438 \u043F\u0430\u0440\u043E\u043B\u044C"}
                 onFocus={() => setFocused("password")}
                 onBlur={() => setFocused(null)}
                 className={`w-full border-b-2 bg-transparent px-0 py-3 font-mono text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/40 ${
@@ -114,7 +114,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               type="submit"
               className="mt-4 flex items-center justify-center gap-3 rounded-full bg-primary py-4 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              {isLogin ? "Enter" : "Join the Crew"}
+              {isLogin ? "\u0412\u041E\u0419\u0422\u0418" : "\u0421\u041E\u0417\u0414\u0410\u0422\u042C \u0410\u041A\u041A\u0410\u0423\u041D\u0422"}
               <ArrowRight className="h-4 w-4" />
             </button>
           </form>
@@ -123,19 +123,19 @@ export function AuthForm({ mode }: AuthFormProps) {
           <div className="my-8 flex items-center gap-4">
             <div className="h-px flex-1 bg-foreground/[0.08]" />
             <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-              or
+              {"\u0438\u043B\u0438"}
             </span>
             <div className="h-px flex-1 bg-foreground/[0.08]" />
           </div>
 
           {/* Switch form */}
           <p className="text-center font-mono text-xs text-muted-foreground">
-            {isLogin ? "No account yet? " : "Already have an account? "}
+            {isLogin ? "\u041D\u0435\u0442 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430? " : "\u0423\u0436\u0435 \u0435\u0441\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442? "}
             <Link
               href={isLogin ? "/register" : "/login"}
               className="text-primary transition-colors hover:underline"
             >
-              {isLogin ? "Join the Crew" : "Log In"}
+              {isLogin ? "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F" : "\u0412\u043E\u0439\u0442\u0438"}
             </Link>
           </p>
         </div>

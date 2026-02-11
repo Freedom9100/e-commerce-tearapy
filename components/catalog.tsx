@@ -60,7 +60,7 @@ function ProductCard({ product }: { product: Product }) {
 
         <div className="flex items-end justify-between">
           <span className="font-mono text-2xl font-bold text-foreground">
-            ${product.price}
+            {product.price} {"\u20BD"}
           </span>
 
           {/* Add to cart button */}
@@ -68,11 +68,11 @@ function ProductCard({ product }: { product: Product }) {
             layout
             className="flex items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground transition-colors"
             animate={{
-              width: hovered ? 140 : 40,
+              width: hovered ? 150 : 40,
               height: 40,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            aria-label={`Add ${product.name} to cart`}
+            aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ${product.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
           >
             <motion.div className="flex items-center gap-2 whitespace-nowrap px-3">
               <Plus className="h-4 w-4 flex-shrink-0" />
@@ -82,7 +82,7 @@ function ProductCard({ product }: { product: Product }) {
                 transition={{ duration: 0.2 }}
                 className="overflow-hidden font-mono text-[11px] font-bold uppercase"
               >
-                Add to Cart
+                {"\u0412 \u041A\u041E\u0420\u0417\u0418\u041D\u0423"}
               </motion.span>
             </motion.div>
           </motion.button>
@@ -110,19 +110,19 @@ export function Catalog() {
       <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-            Catalog
+            {"\u041A\u0430\u0442\u0430\u043B\u043E\u0433"}
           </p>
           <h2 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-            Hot
+            {"\u041D\u043E\u0432\u0438\u043D\u043A\u0438"}
             <br />
-            <span className="text-muted-foreground">Drops</span>
+            <span className="text-muted-foreground">{"\u0441\u0435\u0437\u043E\u043D\u0430"}</span>
           </h2>
         </div>
         <Link
           href="/menu"
           className="self-start font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary md:self-auto"
         >
-          {"View All ->"}
+          {"\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432\u0441\u0435 ->"}
         </Link>
       </div>
 

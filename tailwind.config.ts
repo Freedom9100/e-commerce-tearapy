@@ -47,7 +47,7 @@ const config: Config = {
         lime: '#CCFF00',
       },
       fontFamily: {
-        sans: ['var(--font-oswald)'],
+        sans: ['var(--font-montserrat)'],
         mono: ['var(--font-jetbrains)'],
       },
       borderRadius: {

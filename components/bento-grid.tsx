@@ -6,25 +6,25 @@ import { Factory, Thermometer, Recycle, Leaf } from "lucide-react"
 const cards = [
   {
     title: "Dark Kitchen",
-    description: "Exclusively delivery-based. No storefront overhead means premium quality at fair prices.",
+    description: "\u0422\u043E\u043B\u044C\u043A\u043E \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0430. \u041D\u0438\u043A\u0430\u043A\u0438\u0445 \u0437\u0430\u043B\u043E\u0432 \u2014 \u043F\u0440\u0435\u043C\u0438\u0443\u043C \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E \u043F\u043E \u0447\u0435\u0441\u0442\u043D\u043E\u0439 \u0446\u0435\u043D\u0435.",
     icon: Factory,
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    title: "Temperature Control",
-    description: "Insulated foil packaging keeps your drink at the perfect temperature until delivery.",
+    title: "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    description: "\u0422\u0435\u0440\u043C\u043E\u0443\u043F\u0430\u043A\u043E\u0432\u043A\u0430 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0435\u0442 \u0438\u0434\u0435\u0430\u043B\u044C\u043D\u0443\u044E \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u0443 \u0434\u043E \u0441\u0430\u043C\u043E\u0439 \u0434\u0432\u0435\u0440\u0438.",
     icon: Thermometer,
     className: "md:col-span-1",
   },
   {
-    title: "Eco Friendly",
-    description: "100% recyclable cups and packaging. Zero single-use plastics.",
+    title: "\u042D\u043A\u043E",
+    description: "100% \u043F\u0435\u0440\u0435\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u043C\u044B\u0435 \u0441\u0442\u0430\u043A\u0430\u043D\u044B \u0438 \u0443\u043F\u0430\u043A\u043E\u0432\u043A\u0430. \u041D\u043E\u043B\u044C \u043F\u043B\u0430\u0441\u0442\u0438\u043A\u0430.",
     icon: Recycle,
     className: "md:col-span-1",
   },
   {
-    title: "Fresh Ingredients",
-    description: "Locally sourced fruits and organic tea leaves, never from concentrate.",
+    title: "\u0421\u0432\u0435\u0436\u0435\u0441\u0442\u044C",
+    description: "\u041B\u043E\u043A\u0430\u043B\u044C\u043D\u044B\u0435 \u0444\u0440\u0443\u043A\u0442\u044B \u0438 \u043E\u0440\u0433\u0430\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0447\u0430\u0439. \u041D\u0438\u043A\u0430\u043A\u0438\u0445 \u043A\u043E\u043D\u0446\u0435\u043D\u0442\u0440\u0430\u0442\u043E\u0432.",
     icon: Leaf,
     className: "md:col-span-2",
   },
@@ -47,12 +47,12 @@ export function BentoGrid() {
     <section id="about" className="px-4 py-20 md:px-12 xl:px-24">
       <div className="mb-12">
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-          Why Us
+          {"\u041F\u043E\u0447\u0435\u043C\u0443 \u043C\u044B"}
         </p>
         <h2 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-          Engineered
+          {"\u0421\u043E\u0437\u0434\u0430\u043D\u043E"}
           <br />
-          <span className="text-muted-foreground">for flavor</span>
+          <span className="text-muted-foreground">{"\u0434\u043B\u044F \u0432\u043A\u0443\u0441\u0430"}</span>
         </h2>
       </div>
 

@@ -8,8 +8,8 @@ import { ArrowRight } from "lucide-react"
 const moods = [
   {
     id: "fizzy",
-    label: "FIZZY ENERGY",
-    subtitle: "Sparkling teas to electrify your day",
+    label: "\u042D\u041D\u0415\u0420\u0413\u0418\u042F",
+    subtitle: "\u0413\u0430\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u0447\u0430\u0438 \u0434\u043B\u044F \u0437\u0430\u0440\u044F\u0434\u0430 \u043D\u0430 \u0432\u0435\u0441\u044C \u0434\u0435\u043D\u044C",
     gradient: "from-[#CCFF00]/30 via-[#CCFF00]/5 to-transparent",
     borderGlow: "group-hover:shadow-[0_0_60px_-10px_hsla(72,100%,50%,0.3)]",
     accentColor: "text-primary",
@@ -17,8 +17,8 @@ const moods = [
   },
   {
     id: "chill",
-    label: "MILKY CHILL",
-    subtitle: "Creamy milk teas for slow evenings",
+    label: "\u0427\u0418\u041B\u041B",
+    subtitle: "\u041C\u043E\u043B\u043E\u0447\u043D\u044B\u0435 \u0447\u0430\u0438 \u0434\u043B\u044F \u043C\u0435\u0434\u043B\u0435\u043D\u043D\u044B\u0445 \u0432\u0435\u0447\u0435\u0440\u043E\u0432",
     gradient: "from-[#8B5CF6]/30 via-[#8B5CF6]/5 to-transparent",
     borderGlow: "group-hover:shadow-[0_0_60px_-10px_hsla(258,90%,66%,0.3)]",
     accentColor: "text-[#8B5CF6]",
@@ -26,8 +26,8 @@ const moods = [
   },
   {
     id: "focus",
-    label: "PURE FOCUS",
-    subtitle: "Clean fruit teas for clarity",
+    label: "\u0424\u041E\u041A\u0423\u0421",
+    subtitle: "\u0427\u0438\u0441\u0442\u044B\u0435 \u0444\u0440\u0443\u043A\u0442\u043E\u0432\u044B\u0435 \u0447\u0430\u0438 \u0434\u043B\u044F \u044F\u0441\u043D\u043E\u0441\u0442\u0438",
     gradient: "from-[#F97316]/30 via-[#F97316]/5 to-transparent",
     borderGlow: "group-hover:shadow-[0_0_60px_-10px_hsla(24,95%,53%,0.3)]",
     accentColor: "text-[#F97316]",
@@ -52,12 +52,12 @@ export function ShopByMood() {
     <section className="px-4 py-20 md:px-12 xl:px-24">
       <div className="mb-12">
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-          Discover
+          {"\u041E\u0442\u043A\u0440\u043E\u0439"}
         </p>
         <h2 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-          Shop by
+          {"\u0412\u044B\u0431\u0435\u0440\u0438"}
           <br />
-          <span className="text-muted-foreground">Mood</span>
+          <span className="text-muted-foreground">{"\u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043D\u0438\u0435"}</span>
         </h2>
       </div>
 
@@ -118,7 +118,7 @@ export function ShopByMood() {
                   href={`/menu?filter=${mood.filterParam}`}
                   className={`mt-6 flex items-center gap-2 self-start font-mono text-xs uppercase tracking-wider transition-colors ${mood.accentColor} opacity-0 group-hover:opacity-100`}
                 >
-                  Explore
+                  {"\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C"}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>

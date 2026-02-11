@@ -21,16 +21,16 @@ export function PerfectMatch() {
       <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-            Combos
+            {"\u041A\u043E\u043C\u0431\u043E"}
           </p>
           <h2 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-            Perfect
+            {"\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u0430\u044F"}
             <br />
-            <span className="text-muted-foreground">Match</span>
+            <span className="text-muted-foreground">{"\u043F\u0430\u0440\u0430"}</span>
           </h2>
         </div>
         <p className="max-w-xs font-mono text-xs leading-relaxed text-muted-foreground">
-          Curated pairings of our best drinks and desserts. Save more, taste more.
+          {"\u041B\u0443\u0447\u0448\u0438\u0435 \u0441\u043E\u0447\u0435\u0442\u0430\u043D\u0438\u044F \u043D\u0430\u043F\u0438\u0442\u043A\u043E\u0432 \u0438 \u0434\u0435\u0441\u0435\u0440\u0442\u043E\u0432. \u042D\u043A\u043E\u043D\u043E\u043C\u044C \u0431\u043E\u043B\u044C\u0448\u0435, \u043F\u0440\u043E\u0431\u0443\u0439 \u0431\u043E\u043B\u044C\u0448\u0435."}
         </p>
       </div>
 
@@ -89,15 +89,15 @@ export function PerfectMatch() {
               <div className="flex items-end justify-between">
                 <div>
                   <span className="font-mono text-2xl font-bold text-foreground">
-                    ${combo.price}
+                    {combo.price} {"\u20BD"}
                   </span>
                   <span className="ml-2 font-mono text-[10px] uppercase text-muted-foreground">
-                    combo
+                    {"\u043A\u043E\u043C\u0431\u043E"}
                   </span>
                 </div>
                 <button
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
-                  aria-label={`Add ${combo.name} combo to cart`}
+                  aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043A\u043E\u043C\u0431\u043E ${combo.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
                 >
                   <Plus className="h-4 w-4" />
                 </button>

@@ -7,13 +7,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { type Product, desserts } from "@/lib/data"
 
-const sizes = ["S / 350ml", "M / 500ml", "L / 700ml"]
+const sizes = ["S / 350 \u043C\u043B", "M / 500 \u043C\u043B", "L / 700 \u043C\u043B"]
 const sugarLevels = ["0%", "30%", "50%", "70%", "100%"]
 const toppings = [
-  { name: "Boba Pearls", price: "+$0.80" },
-  { name: "Coconut Jelly", price: "+$0.60" },
-  { name: "Aloe Vera", price: "+$0.50" },
-  { name: "Cheese Foam", price: "+$1.20" },
+  { name: "\u0411\u043E\u0431\u0430", price: "+50 \u20BD" },
+  { name: "\u041A\u043E\u043A\u043E\u0441\u043E\u0432\u043E\u0435 \u0436\u0435\u043B\u0435", price: "+40 \u20BD" },
+  { name: "\u0410\u043B\u043E\u044D \u0432\u0435\u0440\u0430", price: "+30 \u20BD" },
+  { name: "\u0421\u044B\u0440\u043D\u0430\u044F \u043F\u0435\u043D\u043A\u0430", price: "+80 \u20BD" },
 ]
 
 export function ProductDetailView({ product }: { product: Product }) {
@@ -28,6 +28,13 @@ export function ProductDetailView({ product }: { product: Product }) {
     )
   }
 
+  const categoryLabels: Record<string, string> = {
+    "milk-tea": "\u043C\u043E\u043B\u043E\u0447\u043D\u044B\u0439 \u0447\u0430\u0439",
+    "fruit-tea": "\u0444\u0440\u0443\u043A\u0442\u043E\u0432\u044B\u0439 \u0447\u0430\u0439",
+    fizzy: "\u0444\u0438\u0437\u0437\u0438",
+    desserts: "\u0434\u0435\u0441\u0435\u0440\u0442\u044B",
+  }
+
   return (
     <section className="px-4 py-8 md:px-12 xl:px-24">
       {/* Back link */}
@@ -36,7 +43,7 @@ export function ProductDetailView({ product }: { product: Product }) {
         className="mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
-        Back to Menu
+        {"\u041D\u0430\u0437\u0430\u0434 \u0432 \u043C\u0435\u043D\u044E"}
       </Link>
 
       {/* Header */}
@@ -52,12 +59,10 @@ export function ProductDetailView({ product }: { product: Product }) {
           ))}
         </div>
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-          {product.category.replace("-", " ")}
+          {categoryLabels[product.category] || product.category}
         </p>
         <h1 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-          {product.name.split(" ")[0]}
-          <br />
-          <span className="text-muted-foreground">{product.name.split(" ").slice(1).join(" ")}</span>
+          {product.name}
         </h1>
       </div>
 
@@ -71,7 +76,7 @@ export function ProductDetailView({ product }: { product: Product }) {
         >
           <Image
             src={product.image || "/placeholder.svg"}
-            alt={`${product.name} drink detail`}
+            alt={product.name}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -94,7 +99,7 @@ export function ProductDetailView({ product }: { product: Product }) {
           {/* Size selector */}
           <div>
             <label className="mb-3 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Size / Volume
+              {"\u041E\u0411\u042A\u0401\u041C"}
             </label>
             <div className="flex gap-2">
               {sizes.map((size, i) => (
@@ -116,7 +121,7 @@ export function ProductDetailView({ product }: { product: Product }) {
           {/* Sugar level */}
           <div>
             <label className="mb-3 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Sugar Level
+              {"\u0421\u0410\u0425\u0410\u0420"}
             </label>
             <div className="flex gap-1.5">
               {sugarLevels.map((level, i) => (
@@ -138,7 +143,7 @@ export function ProductDetailView({ product }: { product: Product }) {
           {/* Toppings */}
           <div>
             <label className="mb-3 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Add-ons
+              {"\u0422\u041E\u041F\u041F\u0418\u041D\u0413\u0418"}
             </label>
             <div className="grid grid-cols-2 gap-2">
               {toppings.map((topping, i) => (
@@ -169,7 +174,7 @@ export function ProductDetailView({ product }: { product: Product }) {
           {/* Ingredients receipt */}
           <div className="rounded-xl border border-foreground/[0.08] bg-card p-5">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Composition
+              {"\u0421\u041E\u0421\u0422\u0410\u0412"}
             </p>
             <div className="flex flex-col gap-2">
               {product.ingredients.map((ing) => (
@@ -195,7 +200,7 @@ export function ProductDetailView({ product }: { product: Product }) {
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 className="flex h-12 w-12 items-center justify-center text-foreground transition-colors hover:text-primary"
-                aria-label="Decrease quantity"
+                aria-label={"\u0423\u043C\u0435\u043D\u044C\u0448\u0438\u0442\u044C"}
               >
                 <Minus className="h-4 w-4" />
               </button>
@@ -205,7 +210,7 @@ export function ProductDetailView({ product }: { product: Product }) {
               <button
                 onClick={() => setQuantity(quantity + 1)}
                 className="flex h-12 w-12 items-center justify-center text-foreground transition-colors hover:text-primary"
-                aria-label="Increase quantity"
+                aria-label={"\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C"}
               >
                 <Plus className="h-4 w-4" />
               </button>
@@ -213,7 +218,7 @@ export function ProductDetailView({ product }: { product: Product }) {
 
             <button className="flex flex-1 items-center justify-center gap-3 rounded-full bg-primary py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]">
               <ShoppingBag className="h-4 w-4" />
-              Add to Cart - ${product.price}
+              {"\u0412 \u043A\u043E\u0440\u0437\u0438\u043D\u0443 \u2014 "}{product.price} {"\u20BD"}
             </button>
           </div>
         </motion.div>
@@ -223,11 +228,11 @@ export function ProductDetailView({ product }: { product: Product }) {
       <div className="mt-20">
         <div className="mb-8">
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-            Goes Great With
+            {"\u041E\u0442\u043B\u0438\u0447\u043D\u043E \u0441\u043E\u0447\u0435\u0442\u0430\u0435\u0442\u0441\u044F \u0441"}
           </p>
           <h2 className="mt-2 font-sans text-3xl font-bold uppercase tracking-tight text-foreground md:text-4xl">
-            Pair it
-            <span className="text-muted-foreground"> with</span>
+            {"\u0414\u043E\u0431\u0430\u0432\u044C"}
+            <span className="text-muted-foreground"> {"\u0434\u0435\u0441\u0435\u0440\u0442"}</span>
           </h2>
         </div>
 
@@ -255,12 +260,12 @@ export function ProductDetailView({ product }: { product: Product }) {
                   {dessert.name}
                 </h4>
                 <span className="font-mono text-lg font-bold text-foreground">
-                  ${dessert.price}
+                  {dessert.price} {"\u20BD"}
                 </span>
               </div>
               <button
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/10 text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
-                aria-label={`Add ${dessert.name} to cart`}
+                aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ${dessert.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
               >
                 <Plus className="h-3.5 w-3.5" />
               </button>

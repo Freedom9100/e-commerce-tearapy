@@ -5,20 +5,20 @@ import { motion } from "framer-motion"
 import { ShoppingBag, Minus, Plus } from "lucide-react"
 import Image from "next/image"
 
-const sizes = ["S / 350ml", "M / 500ml", "L / 700ml"]
+const sizes = ["S / 350 \u043C\u043B", "M / 500 \u043C\u043B", "L / 700 \u043C\u043B"]
 const sugarLevels = ["0%", "30%", "50%", "70%", "100%"]
 const toppings = [
-  { name: "Boba Pearls", price: "+$0.80" },
-  { name: "Coconut Jelly", price: "+$0.60" },
-  { name: "Aloe Vera", price: "+$0.50" },
-  { name: "Cheese Foam", price: "+$1.20" },
+  { name: "\u0411\u043E\u0431\u0430", price: "+50 \u20BD" },
+  { name: "\u041A\u043E\u043A\u043E\u0441\u043E\u0432\u043E\u0435 \u0436\u0435\u043B\u0435", price: "+40 \u20BD" },
+  { name: "\u0410\u043B\u043E\u044D \u0432\u0435\u0440\u0430", price: "+30 \u20BD" },
+  { name: "\u0421\u044B\u0440\u043D\u0430\u044F \u043F\u0435\u043D\u043A\u0430", price: "+80 \u20BD" },
 ]
 
 const ingredients = [
-  { name: "Organic Matcha", code: "C₈H₁₀N₄O₂", amount: "4g" },
-  { name: "Oat Milk", code: "Base", amount: "350ml" },
-  { name: "Cane Sugar", code: "C₁₂H₂₂O₁₁", amount: "0g" },
-  { name: "Ice", code: "H₂O(s)", amount: "120g" },
+  { name: "\u041E\u0440\u0433\u0430\u043D\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u043C\u0430\u0442\u0447\u0430", code: "C\u2088H\u2081\u2080N\u2084O\u2082", amount: "4 \u0433" },
+  { name: "\u041E\u0432\u0441\u044F\u043D\u043E\u0435 \u043C\u043E\u043B\u043E\u043A\u043E", code: "Base", amount: "350 \u043C\u043B" },
+  { name: "\u0422\u0440\u043E\u0441\u0442\u043D\u0438\u043A\u043E\u0432\u044B\u0439 \u0441\u0430\u0445\u0430\u0440", code: "C\u2081\u2082H\u2082\u2082O\u2081\u2081", amount: "0 \u0433" },
+  { name: "\u041B\u0451\u0434", code: "H\u2082O(s)", amount: "120 \u0433" },
 ]
 
 export function ProductDetail() {
@@ -37,12 +37,12 @@ export function ProductDetail() {
     <section className="px-4 py-20 md:px-12 xl:px-24">
       <div className="mb-12">
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-          Featured
+          {"\u0425\u0438\u0442"}
         </p>
         <h2 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-          Matcha
+          {"\u041C\u0430\u0442\u0447\u0430"}
           <br />
-          <span className="text-muted-foreground">Surge</span>
+          <span className="text-muted-foreground">{"\u0421\u0451\u0440\u0434\u0436"}</span>
         </h2>
       </div>
 
@@ -57,7 +57,7 @@ export function ProductDetail() {
         >
           <Image
             src="/drinks/matcha-surge.jpg"
-            alt="Matcha Surge drink detail"
+            alt={"\u041C\u0430\u0442\u0447\u0430 \u0421\u0451\u0440\u0434\u0436"}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -75,7 +75,7 @@ export function ProductDetail() {
           {/* Size selector */}
           <div>
             <label className="mb-3 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Size / Volume
+              {"\u041E\u0411\u042A\u0401\u041C"}
             </label>
             <div className="flex gap-2">
               {sizes.map((size, i) => (
@@ -97,7 +97,7 @@ export function ProductDetail() {
           {/* Sugar level */}
           <div>
             <label className="mb-3 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Sugar Level
+              {"\u0421\u0410\u0425\u0410\u0420"}
             </label>
             <div className="flex gap-1.5">
               {sugarLevels.map((level, i) => (
@@ -119,7 +119,7 @@ export function ProductDetail() {
           {/* Toppings */}
           <div>
             <label className="mb-3 block font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Add-ons
+              {"\u0422\u041E\u041F\u041F\u0418\u041D\u0413\u0418"}
             </label>
             <div className="grid grid-cols-2 gap-2">
               {toppings.map((topping, i) => (
@@ -150,7 +150,7 @@ export function ProductDetail() {
           {/* Ingredients receipt */}
           <div className="rounded-xl border border-foreground/[0.08] bg-card p-5">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Composition
+              {"\u0421\u041E\u0421\u0422\u0410\u0412"}
             </p>
             <div className="flex flex-col gap-2">
               {ingredients.map((ing) => (
@@ -171,7 +171,7 @@ export function ProductDetail() {
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 className="flex h-12 w-12 items-center justify-center text-foreground transition-colors hover:text-primary"
-                aria-label="Decrease quantity"
+                aria-label={"\u0423\u043C\u0435\u043D\u044C\u0448\u0438\u0442\u044C"}
               >
                 <Minus className="h-4 w-4" />
               </button>
@@ -179,7 +179,7 @@ export function ProductDetail() {
               <button
                 onClick={() => setQuantity(quantity + 1)}
                 className="flex h-12 w-12 items-center justify-center text-foreground transition-colors hover:text-primary"
-                aria-label="Increase quantity"
+                aria-label={"\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C"}
               >
                 <Plus className="h-4 w-4" />
               </button>
@@ -187,7 +187,7 @@ export function ProductDetail() {
 
             <button className="flex flex-1 items-center justify-center gap-3 rounded-full bg-primary py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]">
               <ShoppingBag className="h-4 w-4" />
-              Add to Cart - $6.90
+              {"\u0412 \u043A\u043E\u0440\u0437\u0438\u043D\u0443 \u2014 350 \u20BD"}
             </button>
           </div>
         </motion.div>

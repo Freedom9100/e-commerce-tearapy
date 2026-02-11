@@ -9,11 +9,11 @@ import { useSearchParams } from "next/navigation"
 import { products, type Product } from "@/lib/data"
 
 const filters = [
-  { key: "all", label: "ALL" },
-  { key: "milk-tea", label: "MILK TEA" },
-  { key: "fruit-tea", label: "FRUIT TEA" },
-  { key: "fizzy", label: "FIZZY" },
-  { key: "desserts", label: "DESSERTS" },
+  { key: "all", label: "\u0412\u0421\u0415" },
+  { key: "milk-tea", label: "\u041C\u041E\u041B\u041E\u0427\u041D\u042B\u0415" },
+  { key: "fruit-tea", label: "\u0427\u0410\u0419\u041D\u042B\u0415" },
+  { key: "fizzy", label: "\u0424\u0418\u0417\u0417\u0418" },
+  { key: "desserts", label: "\u0414\u0415\u0421\u0415\u0420\u0422\u042B" },
 ]
 
 const ITEMS_PER_PAGE = 6
@@ -79,7 +79,7 @@ function MenuProductCard({ product }: { product: Product }) {
               {product.volume}
             </span>
             <span className="font-mono text-2xl font-bold text-foreground">
-              ${product.price}
+              {product.price} {"\u20BD"}
             </span>
           </div>
 
@@ -87,11 +87,11 @@ function MenuProductCard({ product }: { product: Product }) {
             layout
             className="flex items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground transition-colors"
             animate={{
-              width: hovered ? 140 : 40,
+              width: hovered ? 150 : 40,
               height: 40,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            aria-label={`Add ${product.name} to cart`}
+            aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ${product.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
           >
             <motion.div className="flex items-center gap-2 whitespace-nowrap px-3">
               <Plus className="h-4 w-4 flex-shrink-0" />
@@ -101,7 +101,7 @@ function MenuProductCard({ product }: { product: Product }) {
                 transition={{ duration: 0.2 }}
                 className="overflow-hidden font-mono text-[11px] font-bold uppercase"
               >
-                Add to Cart
+                {"\u0412 \u041A\u041E\u0420\u0417\u0418\u041D\u0423"}
               </motion.span>
             </motion.div>
           </motion.button>
@@ -143,12 +143,12 @@ export function MenuCatalog() {
       {/* Header */}
       <div className="mb-12">
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-          Full Menu
+          {"\u041F\u043E\u043B\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"}
         </p>
         <h1 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-          Our
+          {"\u041D\u0430\u0448\u0430"}
           <br />
-          <span className="text-muted-foreground">Collection</span>
+          <span className="text-muted-foreground">{"\u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F"}</span>
         </h1>
       </div>
 
@@ -185,10 +185,10 @@ export function MenuCatalog() {
       {filteredProducts.length === 0 && (
         <div className="flex flex-col items-center justify-center py-20">
           <p className="font-sans text-2xl font-bold uppercase text-muted-foreground">
-            Coming Soon
+            {"\u0421\u043A\u043E\u0440\u043E \u0431\u0443\u0434\u0435\u0442"}
           </p>
           <p className="mt-2 font-mono text-xs text-muted-foreground">
-            This category is being brewed up. Check back later.
+            {"\u042D\u0442\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F \u0433\u043E\u0442\u043E\u0432\u0438\u0442\u0441\u044F. \u0417\u0430\u0433\u043B\u044F\u043D\u0438 \u043F\u043E\u0437\u0436\u0435."}
           </p>
         </div>
       )}
@@ -200,7 +200,7 @@ export function MenuCatalog() {
             onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_PAGE)}
             className="rounded-full border border-foreground/10 bg-secondary px-8 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all hover:border-primary hover:text-primary"
           >
-            Load More
+            {"\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0435\u0449\u0451"}
           </button>
         </div>
       )}
@@ -208,7 +208,7 @@ export function MenuCatalog() {
       {/* Results count */}
       <div className="mt-8 text-center">
         <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-          Showing {visibleProducts.length} of {filteredProducts.length} products
+          {"\u041F\u043E\u043A\u0430\u0437\u0430\u043D\u043E"} {visibleProducts.length} {"\u0438\u0437"} {filteredProducts.length}
         </p>
       </div>
     </section>

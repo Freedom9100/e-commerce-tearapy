@@ -1,24 +1,24 @@
 import React from "react"
 import type { Metadata, Viewport } from "next"
-import { Oswald, JetBrains_Mono } from "next/font/google"
+import { Montserrat, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
-const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-oswald",
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-montserrat",
   display: "swap",
 })
 
 const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-jetbrains",
   display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "TEARAPY | Tea-Based Dark Kitchen",
+  title: "TEARAPY | Dark Kitchen",
   description:
-    "Premium tea-based beverages crafted in our dark kitchen. Fresh fruits, zero sugar options, delivered in 30 minutes.",
+    "Авторские чайные напитки. Свежие фрукты, без сахара, доставка за 30 минут.",
 }
 
 export const viewport: Viewport = {
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${oswald.variable} ${jetbrains.variable}`}>
+    <html lang="ru" className={`${montserrat.variable} ${jetbrains.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   )
