@@ -46,7 +46,7 @@ const cardVariants = {
 }
 
 export function ShopByMood() {
-  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [expandedId, setExpandedId] = useState<string | null>(moods[0].id)
 
   return (
     <section className="px-4 py-20 md:px-12 xl:px-24">
@@ -85,7 +85,7 @@ export function ShopByMood() {
             >
               {/* Gradient background */}
               <div
-                className={`absolute inset-0 bg-gradient-to-b ${mood.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                className={`absolute inset-0 bg-gradient-to-b ${mood.gradient} transition-opacity duration-500 ${isExpanded ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
               />
 
               {/* Content */}
@@ -116,7 +116,7 @@ export function ShopByMood() {
 
                 <Link
                   href={`/menu?filter=${mood.filterParam}`}
-                  className={`mt-6 flex items-center gap-2 self-start font-mono text-xs uppercase tracking-wider transition-colors ${mood.accentColor} opacity-0 group-hover:opacity-100`}
+                  className={`mt-6 flex items-center gap-2 self-start font-mono text-xs uppercase tracking-wider transition-colors ${mood.accentColor} ${isExpanded ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
                 >
                   {"\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C"}
                   <ArrowRight className="h-3.5 w-3.5" />

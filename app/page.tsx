@@ -11,8 +11,8 @@ export default function Page() {
       <Header />
       <Hero />
       <BentoGrid />
-      <ShopByMood />
       <Catalog />
+      <ShopByMood />
       <Footer />
     </main>
   )

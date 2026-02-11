@@ -63,30 +63,45 @@ export function BentoGrid() {
         viewport={{ once: true, amount: 0.2 }}
         className="grid gap-4 md:grid-cols-4 md:grid-rows-2"
       >
-        {cards.map((card) => (
-          <motion.div
-            key={card.title}
-            variants={cardVariants}
-            className={`group relative overflow-hidden rounded-2xl border border-foreground/[0.08] bg-card p-6 transition-colors hover:border-primary/30 md:p-8 ${card.className}`}
-          >
-            {/* Hover glow */}
-            <div className="pointer-events-none absolute inset-0 bg-primary/[0.03] opacity-0 transition-opacity group-hover:opacity-100" />
+        {cards.map((card) => {
+          const isDarkKitchen = card.title === "Dark Kitchen"
+          return (
+            <motion.div
+              key={card.title}
+              variants={cardVariants}
+              className={`group relative overflow-hidden rounded-2xl border border-foreground/[0.08] bg-card p-6 transition-colors hover:border-primary/30 md:p-8 ${card.className}`}
+            >
+              {/* Dark Kitchen: Giant typographic background */}
+              {isDarkKitchen && (
+                <>
+                  <span
+                    className="pointer-events-none absolute right-10 top-1/4 z-0 origin-top-right font-black uppercase leading-none text-white/5 transition-transform duration-500 group-hover:translate-x-2"
+                    style={{ fontSize: "clamp(5rem, 12vw, 10rem)" }}
+                  >
+                    DARK
+                  </span>
+                </>
+              )}
 
-            <div className="relative z-10 flex h-full flex-col justify-between gap-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-foreground/10 bg-secondary text-primary">
-                <card.icon className="h-6 w-6" />
+              {/* Hover glow */}
+              <div className="pointer-events-none absolute inset-0 bg-primary/[0.03] opacity-0 transition-opacity group-hover:opacity-100" />
+
+              <div className="relative z-10 flex h-full flex-col justify-between gap-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-foreground/10 bg-secondary text-primary">
+                  <card.icon className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className={`font-sans font-bold uppercase tracking-wide text-foreground ${isDarkKitchen ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"}`}>
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 font-mono text-xs leading-relaxed text-muted-foreground">
+                    {card.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-sans text-xl font-bold uppercase tracking-wide text-foreground md:text-2xl">
-                  {card.title}
-                </h3>
-                <p className="mt-2 font-mono text-xs leading-relaxed text-muted-foreground">
-                  {card.description}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          )
+        })}
       </motion.div>
     </section>
   )

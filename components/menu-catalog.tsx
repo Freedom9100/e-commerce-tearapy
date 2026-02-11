@@ -10,14 +10,14 @@ import { products, type Product } from "@/lib/data"
 import { getAssetPath } from "@/lib/utils"
 
 const filters = [
-  { key: "all", label: "\u0412\u0421\u0415" },
-  { key: "milk-tea", label: "\u041C\u041E\u041B\u041E\u0427\u041D\u042B\u0415" },
-  { key: "fruit-tea", label: "\u0427\u0410\u0419\u041D\u042B\u0415" },
-  { key: "fizzy", label: "\u0424\u0418\u0417\u0417\u0418" },
-  { key: "desserts", label: "\u0414\u0415\u0421\u0415\u0420\u0422\u042B" },
+  { key: "all", label: "ВСЕ" },
+  { key: "milk-tea", label: "МОЛОЧНЫЕ" },
+  { key: "fruit-tea", label: "ЧАЙНЫЕ" },
+  { key: "fizzy", label: "ФИЗЗИ" },
+  { key: "desserts", label: "ДЕСЕРТЫ" },
 ]
 
-const ITEMS_PER_PAGE = 6
+const ITEMS_PER_PAGE = 8
 
 function MenuProductCard({ product }: { product: Product }) {
   const [hovered, setHovered] = useState(false)
@@ -31,22 +31,22 @@ function MenuProductCard({ product }: { product: Product }) {
       transition={{ duration: 0.3 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative flex flex-col overflow-hidden rounded-xl border border-foreground/[0.08] bg-card transition-all duration-300 hover:border-primary/40"
+      className="group relative flex flex-col overflow-hidden rounded-xl border border-foreground/[0.06] bg-[#1E1E1E] transition-all duration-300 hover:border-primary/30"
       style={{
-        boxShadow: hovered ? "0 0 30px 0 hsla(72, 100%, 50%, 0.08)" : "none",
+        boxShadow: hovered ? "0 0 30px 0 hsla(72, 100%, 50%, 0.06)" : "none",
       }}
     >
-      {/* Image */}
+      {/* Image - dark bg, full width cover, blend white bg */}
       <Link
         href={`/product/${product.id}`}
-        className="relative aspect-[3/4] w-full overflow-hidden bg-secondary"
+        className="relative aspect-[3/4] w-full overflow-hidden bg-[#1E1E1E]"
       >
         <Image
           src={product.image || getAssetPath("/placeholder.svg")}
           alt={product.name}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
         {/* Tags */}
         <div className="absolute top-3 left-3 flex gap-1.5">
@@ -62,10 +62,10 @@ function MenuProductCard({ product }: { product: Product }) {
       </Link>
 
       {/* Info */}
-      <div className="flex flex-1 flex-col justify-between gap-2 p-3">
+      <div className="flex flex-1 flex-col justify-between gap-2 p-4">
         <div>
           <Link href={`/product/${product.id}`}>
-            <h3 className="font-sans text-sm font-bold uppercase tracking-wide text-foreground transition-colors hover:text-primary">
+            <h3 className="font-sans text-sm font-bold uppercase tracking-wide text-white transition-colors hover:text-primary">
               {product.name}
             </h3>
           </Link>
@@ -79,20 +79,20 @@ function MenuProductCard({ product }: { product: Product }) {
             <span className="font-mono text-[9px] text-muted-foreground">
               {product.volume}
             </span>
-            <span className="font-mono text-lg font-bold text-foreground">
-              {product.price} {"\u20BD"}
+            <span className="font-mono text-lg font-bold text-white">
+              {product.price} ₽
             </span>
           </div>
 
           <motion.button
             layout
-            className="flex items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground transition-colors"
+            className="flex flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary text-primary-foreground transition-colors"
             animate={{
               width: hovered ? 130 : 32,
               height: 32,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            aria-label={`\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C ${product.name} \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443`}
+            aria-label={`Добавить ${product.name} в корзину`}
           >
             <motion.div className="flex items-center gap-1.5 whitespace-nowrap px-2">
               <Plus className="h-3.5 w-3.5 flex-shrink-0" />
@@ -102,7 +102,7 @@ function MenuProductCard({ product }: { product: Product }) {
                 transition={{ duration: 0.2 }}
                 className="overflow-hidden font-mono text-[10px] font-bold uppercase"
               >
-                {"\u0412 \u041A\u041E\u0420\u0417\u0418\u041D\u0423"}
+                В корзину
               </motion.span>
             </motion.div>
           </motion.button>
@@ -140,77 +140,80 @@ export function MenuCatalog() {
   }
 
   return (
-    <section className="px-4 py-8 md:px-12 xl:px-24">
-      {/* Header */}
-      <div className="mb-12">
-        <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
-          {"\u041F\u043E\u043B\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"}
-        </p>
-        <h1 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
-          {"\u041D\u0430\u0448\u0430"}
-          <br />
-          <span className="text-muted-foreground">{"\u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F"}</span>
-        </h1>
-      </div>
+    <section className="py-8">
+      {/* Single container: Title, Filters, Grid - all aligned */}
+      <div className="mx-auto max-w-[1400px] w-full px-6 lg:px-8">
+        {/* Header - left aligned */}
+        <div className="mb-10">
+          <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">
+            Полное меню
+          </p>
+          <h1 className="mt-2 font-sans text-4xl font-bold uppercase tracking-tight text-white md:text-6xl">
+            Наша
+            <br />
+            <span className="text-muted-foreground">коллекция</span>
+          </h1>
+        </div>
 
-      {/* Filter pills - horizontal scrollable */}
-      <div className="mb-10 flex gap-2 overflow-x-auto pb-2">
-        {filters.map((filter) => (
-          <button
-            key={filter.key}
-            onClick={() => handleFilterChange(filter.key)}
-            className={`flex-shrink-0 rounded-full border px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-all ${
-              activeFilter === filter.key
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-foreground/10 bg-secondary text-muted-foreground hover:border-foreground/20 hover:text-foreground"
-            }`}
-          >
-            {filter.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Products Grid */}
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          layout
-          className="mx-auto grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {visibleProducts.map((product) => (
-            <MenuProductCard key={product.id} product={product} />
+        {/* Filter pills - left aligned, same container */}
+        <div className="mb-10 flex flex-wrap gap-2">
+          {filters.map((filter) => (
+            <button
+              key={filter.key}
+              onClick={() => handleFilterChange(filter.key)}
+              className={`flex-shrink-0 rounded-full border px-5 py-2.5 font-mono text-xs uppercase tracking-wider transition-all ${
+                activeFilter === filter.key
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-foreground/10 bg-[#1E1E1E] text-muted-foreground hover:border-foreground/20 hover:text-white"
+              }`}
+            >
+              {filter.label}
+            </button>
           ))}
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Empty state */}
-      {filteredProducts.length === 0 && (
-        <div className="flex flex-col items-center justify-center py-20">
-          <p className="font-sans text-2xl font-bold uppercase text-muted-foreground">
-            {"\u0421\u043A\u043E\u0440\u043E \u0431\u0443\u0434\u0435\u0442"}
-          </p>
-          <p className="mt-2 font-mono text-xs text-muted-foreground">
-            {"\u042D\u0442\u0430 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F \u0433\u043E\u0442\u043E\u0432\u0438\u0442\u0441\u044F. \u0417\u0430\u0433\u043B\u044F\u043D\u0438 \u043F\u043E\u0437\u0436\u0435."}
-          </p>
         </div>
-      )}
 
-      {/* Load More */}
-      {hasMore && (
-        <div className="mt-12 flex justify-center">
-          <button
-            onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_PAGE)}
-            className="rounded-full border border-foreground/10 bg-secondary px-8 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-all hover:border-primary hover:text-primary"
+        {/* Products Grid - same container, aligned with title */}
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            layout
+            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
           >
-            {"\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0435\u0449\u0451"}
-          </button>
-        </div>
-      )}
+            {visibleProducts.map((product) => (
+              <MenuProductCard key={product.id} product={product} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
-      {/* Results count */}
-      <div className="mt-8 text-center">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-          {"\u041F\u043E\u043A\u0430\u0437\u0430\u043D\u043E"} {visibleProducts.length} {"\u0438\u0437"} {filteredProducts.length}
-        </p>
+        {/* Empty state */}
+        {filteredProducts.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-20">
+            <p className="font-sans text-2xl font-bold uppercase text-muted-foreground">
+              Скоро будет
+            </p>
+            <p className="mt-2 font-mono text-xs text-muted-foreground">
+              Эта категория готовится. Загляните позже.
+            </p>
+          </div>
+        )}
+
+        {/* Load More */}
+        {hasMore && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_PAGE)}
+              className="rounded-full border border-foreground/10 bg-[#1E1E1E] px-8 py-3 font-mono text-xs uppercase tracking-wider text-white transition-all hover:border-primary hover:text-primary"
+            >
+              Показать ещё
+            </button>
+          </div>
+        )}
+
+        {/* Results count */}
+        <div className="mt-8 text-center">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+            Показано {visibleProducts.length} из {filteredProducts.length}
+          </p>
+        </div>
       </div>
     </section>
   )
