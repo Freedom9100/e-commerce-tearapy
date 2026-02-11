@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,  // GitHub Pages не поддерживает оптимизацию изображений Next.js
   },
-  // Раскомментируйте basePath если ваш репозиторий НЕ называется username.github.io
-  // basePath: '/e-commerce-tearapy',
+  // basePath необходим для GitHub Pages когда репозиторий не username.github.io
+  basePath: '/e-commerce-tearapy',
   typescript: {
     ignoreBuildErrors: true,
   },
