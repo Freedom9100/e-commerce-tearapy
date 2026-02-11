@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Plus } from "lucide-react"
 import Image from "next/image"
 import { combos } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 const containerVariants = {
   hidden: {},
@@ -51,7 +52,7 @@ export function PerfectMatch() {
             {/* Image */}
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-secondary">
               <Image
-                src={combo.image || "/placeholder.svg"}
+                src={combo.image || getAssetPath("/placeholder.svg")}
                 alt={combo.name}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

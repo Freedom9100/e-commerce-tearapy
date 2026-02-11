@@ -168,9 +168,9 @@ export const products: Product[] = [
 ]
 
 export const desserts: Dessert[] = [
-  { id: 101, name: "Матча Моти", price: "250", image: "/drinks/mochi.jpg" },
-  { id: 102, name: "Эгг Вафля", price: "320", image: "/drinks/egg-waffle.jpg" },
-  { id: 103, name: "Дораяки", price: "220", image: "/drinks/dorayaki.jpg" },
+  { id: 101, name: "Матча Моти", price: "250", image: `${basePath}/drinks/mochi.jpg` },
+  { id: 102, name: "Эгг Вафля", price: "320", image: `${basePath}/drinks/egg-waffle.jpg` },
+  { id: 103, name: "Дораяки", price: "220", image: `${basePath}/drinks/dorayaki.jpg` },
 ]
 
 export const combos: Combo[] = [

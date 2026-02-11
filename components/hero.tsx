@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { getAssetPath } from "@/lib/utils"
 
 function Marquee() {
   const text = "\u2022 \u0411\u0415\u0417 \u0421\u0410\u0425\u0410\u0420\u0410 \u2022 \u0421\u0412\u0415\u0416\u0418\u0415 \u0424\u0420\u0423\u041A\u0422\u042B \u2022 DARK KITCHEN \u2022 \u0414\u041E\u0421\u0422\u0410\u0412\u041A\u0410 30 \u041C\u0418\u041D \u2022 ZERO WASTE \u2022 "
@@ -76,7 +77,7 @@ export function Hero() {
             {/* Glow effect */}
             <div className="absolute inset-0 rounded-3xl bg-primary/10 blur-3xl" />
             <Image
-              src="/drinks/hero-drink.jpg"
+              src={getAssetPath("/drinks/hero-drink.jpg")}
               alt={"\u0424\u0438\u0440\u043C\u0435\u043D\u043D\u044B\u0439 \u043D\u0430\u043F\u0438\u0442\u043E\u043A TEARAPY"}
               fill
               className="relative z-10 rounded-3xl object-cover"

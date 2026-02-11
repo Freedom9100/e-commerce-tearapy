@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { products, type Product } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 const filters = [
   { key: "all", label: "\u0412\u0421\u0415" },
@@ -41,7 +42,7 @@ function MenuProductCard({ product }: { product: Product }) {
         className="relative aspect-[3/4] w-full overflow-hidden bg-secondary"
       >
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={product.image || getAssetPath("/placeholder.svg")}
           alt={product.name}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { ShoppingBag, Minus, Plus } from "lucide-react"
 import Image from "next/image"
+import { getAssetPath } from "@/lib/utils"
 
 const sizes = ["S / 350 \u043C\u043B", "M / 500 \u043C\u043B", "L / 700 \u043C\u043B"]
 const sugarLevels = ["0%", "30%", "50%", "70%", "100%"]
@@ -56,7 +57,7 @@ export function ProductDetail() {
           className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-secondary lg:w-1/2"
         >
           <Image
-            src="/drinks/matcha-surge.jpg"
+            src={getAssetPath("/drinks/matcha-surge.jpg")}
             alt={"\u041C\u0430\u0442\u0447\u0430 \u0421\u0451\u0440\u0434\u0436"}
             fill
             className="object-cover"

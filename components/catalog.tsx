@@ -6,6 +6,7 @@ import { Plus } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { products as allProducts, type Product } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 const products = allProducts.slice(0, 5)
 
@@ -27,7 +28,7 @@ function ProductCard({ product }: { product: Product }) {
         className="relative aspect-[3/4] w-full overflow-hidden bg-secondary"
       >
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={product.image || getAssetPath("/placeholder.svg")}
           alt={product.name}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"

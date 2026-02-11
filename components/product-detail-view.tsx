@@ -6,6 +6,7 @@ import { ShoppingBag, Minus, Plus, ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { type Product, desserts } from "@/lib/data"
+import { getAssetPath } from "@/lib/utils"
 
 const sizes = ["S / 350 \u043C\u043B", "M / 500 \u043C\u043B", "L / 700 \u043C\u043B"]
 const sugarLevels = ["0%", "30%", "50%", "70%", "100%"]
@@ -75,7 +76,7 @@ export function ProductDetailView({ product }: { product: Product }) {
           className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-secondary lg:w-1/2"
         >
           <Image
-            src={product.image || "/placeholder.svg"}
+            src={product.image || getAssetPath("/placeholder.svg")}
             alt={product.name}
             fill
             className="object-cover"
@@ -248,7 +249,7 @@ export function ProductDetailView({ product }: { product: Product }) {
             >
               <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-secondary">
                 <Image
-                  src={dessert.image || "/placeholder.svg"}
+                  src={dessert.image || getAssetPath("/placeholder.svg")}
                   alt={dessert.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
