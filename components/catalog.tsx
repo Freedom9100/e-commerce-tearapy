@@ -4,58 +4,10 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Plus } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+import { products as allProducts, type Product } from "@/lib/data"
 
-interface Product {
-  id: number
-  name: string
-  price: string
-  image: string
-  tags: string[]
-  volume: string
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Matcha Surge",
-    price: "6.90",
-    image: "/drinks/matcha-surge.jpg",
-    tags: ["NEW", "VEGAN"],
-    volume: "500ml",
-  },
-  {
-    id: 2,
-    name: "Berry Flux",
-    price: "7.50",
-    image: "/drinks/berry-flux.jpg",
-    tags: ["BEST"],
-    volume: "450ml",
-  },
-  {
-    id: 3,
-    name: "Citrus Volt",
-    price: "5.90",
-    image: "/drinks/citrus-volt.jpg",
-    tags: ["VEGAN"],
-    volume: "500ml",
-  },
-  {
-    id: 4,
-    name: "Taro Dream",
-    price: "8.20",
-    image: "/drinks/taro-dream.jpg",
-    tags: ["NEW"],
-    volume: "450ml",
-  },
-  {
-    id: 5,
-    name: "Peach Signal",
-    price: "6.40",
-    image: "/drinks/peach-signal.jpg",
-    tags: ["VEGAN"],
-    volume: "500ml",
-  },
-]
+const products = allProducts.slice(0, 5)
 
 function ProductCard({ product }: { product: Product }) {
   const [hovered, setHovered] = useState(false)
@@ -69,8 +21,11 @@ function ProductCard({ product }: { product: Product }) {
         boxShadow: hovered ? "0 0 30px 0 hsla(72, 100%, 50%, 0.08)" : "none",
       }}
     >
-      {/* Image */}
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-secondary">
+      {/* Image - links to product page */}
+      <Link
+        href={`/product/${product.id}`}
+        className="relative aspect-[3/4] w-full overflow-hidden bg-secondary"
+      >
         <Image
           src={product.image || "/placeholder.svg"}
           alt={product.name}
@@ -90,14 +45,16 @@ function ProductCard({ product }: { product: Product }) {
             </span>
           ))}
         </div>
-      </div>
+      </Link>
 
       {/* Info */}
       <div className="flex flex-1 flex-col justify-between gap-3 p-4">
         <div>
-          <h3 className="font-sans text-lg font-bold uppercase tracking-wide text-foreground">
-            {product.name}
-          </h3>
+          <Link href={`/product/${product.id}`}>
+            <h3 className="font-sans text-lg font-bold uppercase tracking-wide text-foreground transition-colors hover:text-primary">
+              {product.name}
+            </h3>
+          </Link>
           <p className="font-mono text-xs text-muted-foreground">{product.volume}</p>
         </div>
 
@@ -161,12 +118,12 @@ export function Catalog() {
             <span className="text-muted-foreground">Drops</span>
           </h2>
         </div>
-        <a
-          href="#menu"
+        <Link
+          href="/menu"
           className="self-start font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary md:self-auto"
         >
-          View All {"->"}
-        </a>
+          {"View All ->"}
+        </Link>
       </div>
 
       {/* Mobile: horizontal scroll */}

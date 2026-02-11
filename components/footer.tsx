@@ -1,9 +1,25 @@
 import { Instagram, Twitter } from "lucide-react"
+import Link from "next/link"
 
 const footerLinks = {
-  Menu: ["All Drinks", "New Arrivals", "Best Sellers", "Sugar Free"],
-  Company: ["About Us", "Careers", "Press", "Blog"],
-  Support: ["Delivery Info", "FAQ", "Contact", "Terms"],
+  Menu: [
+    { label: "All Drinks", href: "/menu" },
+    { label: "New Arrivals", href: "/menu?filter=all" },
+    { label: "Milk Tea", href: "/menu?filter=milk-tea" },
+    { label: "Fruit Tea", href: "/menu?filter=fruit-tea" },
+  ],
+  Company: [
+    { label: "About Us", href: "/#about" },
+    { label: "Careers", href: "#" },
+    { label: "Press", href: "#" },
+    { label: "Blog", href: "#" },
+  ],
+  Support: [
+    { label: "Delivery Info", href: "#" },
+    { label: "FAQ", href: "#" },
+    { label: "Contact", href: "#" },
+    { label: "Terms", href: "#" },
+  ],
 }
 
 export function Footer() {
@@ -25,13 +41,13 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5">
               {links.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
                     className="font-mono text-xs text-foreground/60 transition-colors hover:text-primary"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -65,7 +81,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-foreground/[0.05] pt-8 md:flex-row">
         <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-          {"TEARAPY"} {"(C)"} 2026. All rights reserved.
+          {"TEARAPY (C) 2026. All rights reserved."}
         </p>
         <p className="font-mono text-[10px] text-muted-foreground">
           Dark Kitchen / Delivery Only

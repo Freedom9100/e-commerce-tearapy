@@ -1,8 +1,9 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { BentoGrid } from "@/components/bento-grid"
+import { ShopByMood } from "@/components/shop-by-mood"
 import { Catalog } from "@/components/catalog"
-import { ProductDetail } from "@/components/product-detail"
+import { PerfectMatch } from "@/components/perfect-match"
 import { Footer } from "@/components/footer"
 
 export default function Page() {
@@ -11,8 +12,9 @@ export default function Page() {
       <Header />
       <Hero />
       <BentoGrid />
+      <ShopByMood />
       <Catalog />
-      <ProductDetail />
+      <PerfectMatch />
       <Footer />
     </main>
   )

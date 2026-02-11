@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 function Marquee() {
   const text = "SUGAR FREE OPTIONS \u00B7 30 MIN DELIVERY \u00B7 FRESH FRUITS \u00B7 PREMIUM TEA \u00B7 ZERO WASTE \u00B7 "
@@ -50,18 +51,18 @@ export function Hero() {
             Crafted fresh, delivered fast, zero compromises.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="#menu"
+            <Link
+              href="/menu"
               className="inline-flex items-center rounded-full bg-primary px-6 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-105"
             >
               Explore Menu
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              href="/#about"
               className="inline-flex items-center rounded-full border border-foreground/20 px-6 py-3 font-mono text-xs uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </motion.div>
 
