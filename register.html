@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>Регистрация | TEARAPY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <nav class="header_nav">
+        <a href="index.html" class="header_logo">TEARAPY</a>
+        <ul class="header_links">
+          <li><a href="menu.html" class="header_link">МЕНЮ</a></li>
+          <li><a href="index.html#about" class="header_link">О НАС</a></li>
+          <li><a href="index.html#delivery" class="header_link">ДОСТАВКА</a></li>
+        </ul>
+        <div class="header_actions">
+          <a href="login.html" class="header_account" aria-label="Аккаунт">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+          <a href="menu.html" class="header_cart" aria-label="Корзина">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="header_cart_label">КОРЗИНА</span>
+            <span class="header_cart_count">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="auth">
+      <div class="auth_bg">
+        <div class="auth_bg_blur auth_bg_blur_left"></div>
+        <div class="auth_bg_blur auth_bg_blur_right"></div>
+      </div>
+      <div class="auth_card">
+        <a href="index.html" class="auth_logo">TEARAPY</a>
+        <h1 class="auth_title">РЕГИСТРАЦИЯ</h1>
+        <p class="auth_subtitle">Создай аккаунт и начни заказывать</p>
+
+        <form class="auth_form" action="#" method="post">
+          <div class="auth_field">
+            <label class="auth_label" for="reg-name">Имя</label>
+            <input type="text" id="reg-name" name="name" class="auth_input" placeholder="Твоё имя">
+          </div>
+          <div class="auth_field">
+            <label class="auth_label" for="reg-email">E-mail</label>
+            <input type="email" id="reg-email" name="email" class="auth_input" placeholder="you@example.com">
+          </div>
+          <div class="auth_field">
+            <label class="auth_label" for="reg-password">Пароль</label>
+            <input type="password" id="reg-password" name="password" class="auth_input" placeholder="Введи пароль">
+          </div>
+          <button type="submit" class="auth_submit">СОЗДАТЬ АККАУНТ
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="auth_divider">
+          <span class="auth_divider_line"></span>
+          <span class="auth_divider_text">или</span>
+          <span class="auth_divider_line"></span>
+        </div>
+
+        <p class="auth_switch">
+          Уже есть аккаунт? <a href="login.html" class="auth_link">Войти</a>
+        </p>
+      </div>
+
+      <p class="auth_footer">TEARAPY (C) 2026 / Club Access</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer_logo_wrap">
+        <h2 class="footer_logo">TEARAPY</h2>
+      </div>
+      <div class="footer_links_grid">
+        <div class="footer_column">
+          <h4 class="footer_column_title">Меню</h4>
+          <ul class="footer_column_links">
+            <li><a href="menu.html" class="footer_link">Все напитки</a></li>
+            <li><a href="menu.html#all" class="footer_link">Новинки</a></li>
+            <li><a href="menu.html#milk-tea" class="footer_link">Молочные</a></li>
+            <li><a href="menu.html#fruit-tea" class="footer_link">Фруктовые</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4 class="footer_column_title">Компания</h4>
+          <ul class="footer_column_links">
+            <li><a href="index.html#about" class="footer_link">О нас</a></li>
+            <li><a href="#" class="footer_link">Карьера</a></li>
+            <li><a href="#" class="footer_link">Пресса</a></li>
+            <li><a href="#" class="footer_link">Блог</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4 class="footer_column_title">Поддержка</h4>
+          <ul class="footer_column_links">
+            <li><a href="#" class="footer_link">Доставка</a></li>
+            <li><a href="#" class="footer_link">Частые вопросы</a></li>
+            <li><a href="#" class="footer_link">Контакты</a></li>
+            <li><a href="#" class="footer_link">Условия</a></li>
+          </ul>
+        </div>
+        <div class="footer_column footer_column_social">
+          <h4 class="footer_column_title">Соцсети</h4>
+          <div class="footer_social">
+            <a href="#" class="footer_social_link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer_social_link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p class="footer_copyright">TEARAPY (C) 2026. Все права защищены.</p>
+        <p class="footer_tagline">Dark Kitchen / Только доставка</p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

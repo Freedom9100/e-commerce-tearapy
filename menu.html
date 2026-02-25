@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <title>Full Menu | TEARAPY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <nav class="header_nav">
+        <a href="index.html" class="header_logo">TEARAPY</a>
+        <ul class="header_links">
+          <li><a href="menu.html" class="header_link">МЕНЮ</a></li>
+          <li><a href="index.html#about" class="header_link">О НАС</a></li>
+          <li><a href="index.html#delivery" class="header_link">ДОСТАВКА</a></li>
+        </ul>
+        <div class="header_actions">
+          <a href="login.html" class="header_account" aria-label="Аккаунт">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+          <a href="menu.html" class="header_cart" aria-label="Корзина">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="header_cart_label">КОРЗИНА</span>
+            <span class="header_cart_count">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="menu_page">
+      <div class="menu_header">
+        <p class="menu_label">Полное меню</p>
+        <h1 class="menu_title">Наша<br><span class="menu_title_muted">коллекция</span></h1>
+      </div>
+
+      <div class="menu_filters">
+        <a href="#all" class="menu_filter menu_filter_active">ВСЕ</a>
+        <a href="#all" class="menu_filter">МОЛОЧНЫЕ</a>
+        <a href="#all" class="menu_filter">ЧАЙНЫЕ</a>
+        <a href="#all" class="menu_filter">ФИЗЗИ</a>
+        <a href="#desserts" class="menu_filter">ДЕСЕРТЫ</a>
+      </div>
+
+      <div id="all" class="menu_section">
+        <h2 class="menu_section_title">Все напитки</h2>
+        <div class="menu_grid">
+          <article class="catalog_card">
+            <a href="product-1.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/matcha-surge.jpg" alt="Матча Сёрдж" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">NEW</span><span class="catalog_card_tag">VEGAN</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-1.html"><h3 class="catalog_card_title">Матча Сёрдж</h3></a>
+              <p class="catalog_card_description">Церемониальная матча на овсяном молоке. Ноль сахара, максимум энергии.</p>
+              <p class="catalog_card_volume">500 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">350 ₽</span>
+                <a href="product-1.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-2.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/berry-flux.jpg" alt="Берри Флакс" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">BEST</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-2.html"><h3 class="catalog_card_title">Берри Флакс</h3></a>
+              <p class="catalog_card_description">Лесные ягоды с цветком клитории. Меняет цвет, если добавить лимон.</p>
+              <p class="catalog_card_volume">450 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">420 ₽</span>
+                <a href="product-2.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-3.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/citrus-volt.jpg" alt="Цитрус Вольт" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">VEGAN</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-3.html"><h3 class="catalog_card_title">Цитрус Вольт</h3></a>
+              <p class="catalog_card_description">Игристый юдзу и кумкват на базе зелёного чая. Электрическая кислинка.</p>
+              <p class="catalog_card_volume">500 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">290 ₽</span>
+                <a href="product-3.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-4.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/taro-dream.jpg" alt="Таро Дрим" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">NEW</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-4.html"><h3 class="catalog_card_title">Таро Дрим</h3></a>
+              <p class="catalog_card_description">Свежее таро на цельном молоке с тапиоковыми жемчужинами.</p>
+              <p class="catalog_card_volume">450 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">450 ₽</span>
+                <a href="product-4.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-5.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/peach-signal.jpg" alt="Пич Сигнал" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">VEGAN</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-5.html"><h3 class="catalog_card_title">Пич Сигнал</h3></a>
+              <p class="catalog_card_description">Белый персик на улунге с кусочками настоящего персика.</p>
+              <p class="catalog_card_volume">500 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">320 ₽</span>
+                <a href="product-5.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-6.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/lychee-burst.jpg" alt="Личи Бёрст" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">NEW</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-6.html"><h3 class="catalog_card_title">Личи Бёрст</h3></a>
+              <p class="catalog_card_description">Игристый личи-чай с поппинг-боба. Сладкий, цветочный, газированный.</p>
+              <p class="catalog_card_volume">450 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">380 ₽</span>
+                <a href="product-6.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-7.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/jasmine-haze.jpg" alt="Жасмин Хейз" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">VEGAN</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-7.html"><h3 class="catalog_card_title">Жасмин Хейз</h3></a>
+              <p class="catalog_card_description">Чистый жасминовый зелёный чай, холодная заварка 12 часов.</p>
+              <p class="catalog_card_volume">500 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">270 ₽</span>
+                <a href="product-7.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="product-8.html" class="catalog_card_image_wrap">
+              <img src="public/drinks/mango-pulse.jpg" alt="Манго Пульс" class="catalog_card_image">
+              <div class="catalog_card_tags"><span class="catalog_card_tag">BEST</span><span class="catalog_card_tag">VEGAN</span></div>
+            </a>
+            <div class="catalog_card_info">
+              <a href="product-8.html"><h3 class="catalog_card_title">Манго Пульс</h3></a>
+              <p class="catalog_card_description">Альфонсо манго с маракуйей и зелёным чаем. Тропический взрыв.</p>
+              <p class="catalog_card_volume">500 мл</p>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">390 ₽</span>
+                <a href="product-8.html" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div id="desserts" class="menu_section">
+        <h2 class="menu_section_title">Десерты</h2>
+        <div class="menu_grid">
+          <article class="catalog_card">
+            <a href="#" class="catalog_card_image_wrap">
+              <img src="public/drinks/mochi.jpg" alt="Матча Моти" class="catalog_card_image">
+            </a>
+            <div class="catalog_card_info">
+              <h3 class="catalog_card_title">Матча Моти</h3>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">250 ₽</span>
+                <a href="#" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="#" class="catalog_card_image_wrap">
+              <img src="public/drinks/egg-waffle.jpg" alt="Эгг Вафля" class="catalog_card_image">
+            </a>
+            <div class="catalog_card_info">
+              <h3 class="catalog_card_title">Эгг Вафля</h3>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">320 ₽</span>
+                <a href="#" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+          <article class="catalog_card">
+            <a href="#" class="catalog_card_image_wrap">
+              <img src="public/drinks/dorayaki.jpg" alt="Дораяки" class="catalog_card_image">
+            </a>
+            <div class="catalog_card_info">
+              <h3 class="catalog_card_title">Дораяки</h3>
+              <div class="catalog_card_footer">
+                <span class="catalog_card_price">220 ₽</span>
+                <a href="#" class="catalog_card_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> В корзину</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="menu_footer">Показано 11 позиций</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer_logo_wrap">
+        <h2 class="footer_logo">TEARAPY</h2>
+      </div>
+      <div class="footer_links_grid">
+        <div class="footer_column">
+          <h4 class="footer_column_title">Меню</h4>
+          <ul class="footer_column_links">
+            <li><a href="menu.html" class="footer_link">Все напитки</a></li>
+            <li><a href="menu.html#all" class="footer_link">Новинки</a></li>
+            <li><a href="menu.html#milk-tea" class="footer_link">Молочные</a></li>
+            <li><a href="menu.html#fruit-tea" class="footer_link">Фруктовые</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4 class="footer_column_title">Компания</h4>
+          <ul class="footer_column_links">
+            <li><a href="index.html#about" class="footer_link">О нас</a></li>
+            <li><a href="#" class="footer_link">Карьера</a></li>
+            <li><a href="#" class="footer_link">Пресса</a></li>
+            <li><a href="#" class="footer_link">Блог</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4 class="footer_column_title">Поддержка</h4>
+          <ul class="footer_column_links">
+            <li><a href="#" class="footer_link">Доставка</a></li>
+            <li><a href="#" class="footer_link">Частые вопросы</a></li>
+            <li><a href="#" class="footer_link">Контакты</a></li>
+            <li><a href="#" class="footer_link">Условия</a></li>
+          </ul>
+        </div>
+        <div class="footer_column footer_column_social">
+          <h4 class="footer_column_title">Соцсети</h4>
+          <div class="footer_social">
+            <a href="#" class="footer_social_link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer_social_link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p class="footer_copyright">TEARAPY (C) 2026. Все права защищены.</p>
+        <p class="footer_tagline">Dark Kitchen / Только доставка</p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
