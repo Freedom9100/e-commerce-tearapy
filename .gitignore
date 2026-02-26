@@ -7,6 +7,8 @@ __v0_jsx-dev-runtime.ts
 node_modules/
 .next/
 out/
+site/
+.turbo/
 .env*.local
 .DS_Store
 
@@ -14,5 +16,6 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-#Markdown files
-DEPLOYMENT.MD
+# IDE
+.idea/
+.vscode/ск

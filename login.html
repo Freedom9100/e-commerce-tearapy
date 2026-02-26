@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <title>Вход | Т.Рапия</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="auth_page">
+  <div class="viewport">
+    <main class="page">
+    <section class="auth">
+      <div class="auth_bg">
+        <div class="auth_bg_blur auth_bg_blur_left"></div>
+        <div class="auth_bg_blur auth_bg_blur_right"></div>
+      </div>
+      <div class="auth_card">
+        <a href="index.html" class="auth_logo">Т.Рапия</a>
+        <h1 class="auth_title">ВХОД</h1>
+        <p class="auth_subtitle">Введи данные для доступа в аккаунт</p>
+
+        <form class="auth_form" action="#" method="post">
+          <div class="auth_field">
+            <label class="auth_label" for="auth-email">E-MAIL</label>
+            <input type="email" id="auth-email" name="email" class="auth_input" placeholder="you@example.com">
+          </div>
+          <div class="auth_field">
+            <label class="auth_label" for="auth-password">ПАРОЛЬ</label>
+            <input type="password" id="auth-password" name="password" class="auth_input" placeholder="Введи пароль">
+          </div>
+          <button type="submit" class="auth_submit">ВОЙТИ</button>
+        </form>
+
+        <div class="auth_divider">
+          <span class="auth_divider_line"></span>
+          <span class="auth_divider_text">ИЛИ</span>
+          <span class="auth_divider_line"></span>
+        </div>
+
+        <p class="auth_switch">
+          Нет аккаунта? <a href="register.html" class="auth_link">Регистрация</a>
+        </p>
+      </div>
+
+      <p class="auth_footer">Т. РАПИЯ 2026 / ДОСТУП К КЛУБУ</p>
+    </section>
+    </main>
+  </div>
+  <script src="fit.js" defer></script>
+</body>
+</html>

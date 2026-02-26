@@ -26,26 +26,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+      - name: Prepare static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf site
+          mkdir -p site
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+          cp ./*.html site/
+          cp ./style.css site/
 
-      - name: Install dependencies
-        run: pnpm install
+          # Assets live under /public in this repo
+          cp -R ./public ./site/public
 
-      - name: Build with Next.js
-        run: pnpm build
+          # Prevent GitHub Pages from enabling Jekyll
+          touch site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./site
 
   deploy:
     environment:
